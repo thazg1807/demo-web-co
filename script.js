@@ -59,22 +59,22 @@ var swiper = new Swiper(".review-slide", {
     },
     loop:true,
     breakpoints: {
-                0:{
-                slidesPerView: 1,
-                },
-              640: {
-                slidesPerView: 2,
+      0:{
+      slidesPerView: 1,
+      },
+      640: {
+      slidesPerView: 2,
                 
-              },
-              768: {
-                slidesPerView: 2,
+      },
+      768: {
+      slidesPerView: 2,
                 
-              },
-              1024: {
-                slidesPerView: 3,
+      },
+      1024: {
+       slidesPerView: 3,
                 
-              },
-            },
+      },
+    },
 });
 
 
@@ -93,7 +93,6 @@ window.onload = fadeOut;
 
 // Lấy ngữ cảnh của canvas để vẽ biểu đồ
 const ctx = document.getElementById('myChart').getContext('2d');
-
 // Tạo biểu đồ với dữ liệu mẫu
 const myChart = new Chart(ctx, {
   type: 'bar', 
@@ -118,102 +117,8 @@ const myChart = new Chart(ctx, {
 
 
 
+
 // shopping cart //
 document.querySelector('#cart').onclick = () =>{
   document.querySelector('#shopping-cart').classList.toggle('active');
 }
-
-// let cart = document.querySelector('#shopping-cart');
-// let  container= document.querySelector('.container');
-
-// let products = null;
-// fetch('product.json')
-// .then(response => response.json())
-// .then(data => {
-//   products = data;
-//   addDataToHTML();
-// })
-
-// function addDataToHTML(){
-//   let listProductHTML = document.querySelector('.box');
-//   listProductHTML.innerHTML ='';
-
-//   if(products != null){
-//     products.forEach(product => {
-//       let newProduct = document.createElement('div');
-//       newProduct.classList.add('item');
-//       newProduct.innerHTML = 
-//       `<img src="${product.image}" >
-//        <h3>${product.name}</h3>
-//        <span class="price">$${product.price}</span>
-//        <button class="btn" onclick ="addCart(${product.id})"> add to cart</button> 
-//       `
-//       listProductHTML.appendChild(newProduct);
-//     });
-//   }
-// }
-
-// let listCart = [];
-// function checkCart(){
-//   var cookieValue = document.cookie
-//   .split(';')
-//   .find(row => row.startsWith('listCart='));
-//   if(cookieValue){
-//     listCart = JSON.parse(cookieValue.split('=')[1]);
-//   }
-// }
-
-// checkCart();
-
-// function addCart($idProduct){
-//   let productCopy = JSON.parse(JSON.stringify(products));
-//   if(!listCart[$idProduct]){
-//     let dataProduct = productCopy.filter(
-//      product => product.id == $idProduct
-//     )[0];
-//     listCart[$idProduct] = dataProduct;
-//     listCart[$idProduct].quantity = 1;
-//   }else{
-//     listCart[$idProduct].quantity++;
-//   }
-//   let timeSave = "expires=Thu, 31 Dec 2025 23:59:59 UTC";
-//   document.cookie  ="listCart="+JSON.stringify(listCart)+";"+timeSave+"; path=/";
-//   addCartToHTML();
-// }
-
-// addCartToHTML();
-// Function addCartToHTML(){
-//   let listCartHTML = document.querySelector('.listCart');
-//   listCartHTML.innerHTML='';
-
-//   let totalHTML = document.querySelector('.sanpham');
-//   let sanpham = 0;
-
-//   if(listCart){
-//     listCart.forEach(product =>{
-//       if(product){
-//         let newCart = document.createElement('div');
-//         newCart.classList.add('item');
-//         newCart.innerHTML = 
-//         `<img src="${product.image}">
-//                 <div class="content-cart">
-//                     <div class="name">
-//                         ${product.name}
-//                     </div>
-//                     <div class="price">
-//                         $${product.price}
-//                     </div>
-//                 </div>
-//                  <div class="quantity">
-//                     <button>-</button>
-//                     <span class="value">
-//                     ${product.quantity}</span>
-//                     <button>+</button>
-//                 </div> `;
-//         listCartHTML.appendChild(newCart);
-//         sanpham = sanpham + product.quantity;
-//       }
-//     })
-//   }
-//   totalHTML.innerText = sanpham;
-// }

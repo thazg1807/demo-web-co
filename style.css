@@ -19,7 +19,7 @@
 
 html{
     font-size: 62.5%;
-    overflow-x: hidden;
+    overflow-x: hidden; 
     scroll-padding-top: 5.5rem;
     scroll-behavior: smooth;
 }
@@ -57,14 +57,7 @@ section:nth-child(even){
 
 .btn:hover{
     background: var(--green);
-    /* letter-spacing: .1rem; */
-}
-.remove{
-    padding: 1rem;
-    border: none;
-    margin-top: 2rem;
-    background: none;
-    display: none;
+    
 }
 .count{
     width:40px;
@@ -534,9 +527,6 @@ display: block;
 
 
 /* css combo */
-
-
-
 .combo .row{  
     display: flex;
     flex-wrap: wrap;
@@ -554,8 +544,6 @@ display: block;
 }
 
 .combo .row .content{
-    /* flex: 1 1 1rem; */
-    /* text-align: center; */
     margin-left: 3rem;
 }
 
@@ -733,27 +721,6 @@ display: block;
     top: 110%;
     opacity: 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
