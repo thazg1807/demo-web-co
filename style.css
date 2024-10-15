@@ -47,7 +47,7 @@ section:nth-child(even){
 .btn{
     margin-top: 1rem;
     display: inline-block;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     color: #fff;
     background: var(--black);
     border-radius: .5rem;
@@ -57,9 +57,23 @@ section:nth-child(even){
 
 .btn:hover{
     background: var(--green);
-    letter-spacing: .1rem;
+    /* letter-spacing: .1rem; */
 }
-
+.remove{
+    padding: 1rem;
+    border: none;
+    margin-top: 2rem;
+    background: none;
+    display: none;
+}
+.count{
+    width:40px;
+    border-radius: 5px;
+    margin-right:10px;
+    padding: 5px 5px;
+    outline: none;
+    background-color: #eee;
+}
 
 header{
     position: fixed;
@@ -93,43 +107,130 @@ header .navbar a{
 header .navbar a.active,
 header .navbar a:hover{
     color: #fff;
-    background: var(--green);
+    background: crimson;
 }
-
-header .fa-menu,
-header .fa-search,
-header .fa-tym,
-header .fa-shopping{
+header .icons i,
+header .icons a{
     cursor: pointer;
-    display: inline;
-    margin-left: 1rem;
-    border-radius: 50%;
-    line-height: 4.5rem;
-    /* cursor: pointer;
     margin-left:.5rem;
     height: 4.5rem;
     line-height: 4.5rem;
     width: 4.5rem;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.5rem;
     border-radius: 50%;
     background: #eee;
-    display: inline;   */
+    color: var(--black);
+    
+}
+header .icons #cart{
+    position: relative;
+}
+header .icons .sanpham{
+    display: flex;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: -8px;
+    font-size:1,5rem;
+    font-weight: lighter;
 }
 #icon-section{
     width:2.5rem ;
     height:2.5rem ;
     
 }
-/* header .icons:hover{
+header .icons i:hover,
+header .icons a:hover{
     color: #fff;
     background: var(--green);
     transform: rotate(360deg);
-} */
+}
 
 header .icons #menu-bars{
     display: none;   
 }
+
+#shopping-cart{
+    background-color:black;
+    width:50rem;
+    height:70rem;
+    position:fixed;
+    border-radius: .5rem;
+    border: .1rem solid rgba(0,0,0,.2);
+    box-shadow: var(--box-shadow);
+    margin-top: 90px;
+    right:2rem;
+    z-index: 1000;
+    display: none;
+}
+#shopping-cart.active{
+display: block;
+}
+#shopping-cart .name{
+    color: #eee;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 1.5rem;
+}
+
+#shopping-cart .listCart .item{
+    display: grid;
+    grid-template-columns: 120px 6fr 70px;
+    align-items: center;
+    gap: 20px;
+    padding-top: 10px;
+    overflow: auto;
+    
+}
+#shopping-cart .listCart .item img{
+    width: 100%;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+#shopping-cart .listCart .item .name{
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+}
+#shopping-cart .listCart .item .price{
+    font-size:15px ;
+    font-weight: bolder;
+    color: crimson;
+}
+
+
+#shopping-cart .sidebar--footer{
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+#shopping-cart .sidebar--footer .total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    font-size: 15px;
+    color: #eee;
+}
+.btn-cart{
+    cursor: pointer;
+    width: 100%;
+    margin-top: 2rem;
+    background: var(--green);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+
 #search-from{
     position: fixed;
     top:-110%;left: 0;
@@ -204,7 +305,7 @@ header .icons #menu-bars{
 }
 
 .home .home-slider .slide .content span{
-    color: var(--green);
+    color: crimson;
     font-size: 2.5rem;
 }
 .home .home-slider .slide .content h3{
@@ -239,7 +340,7 @@ header .icons #menu-bars{
     text-align: center;
 }
 
-/* .dishes .box-container .box .fa-heart,
+.dishes .box-container .box .fa-heart,
 .dishes .box-container .box .fa-eye{
     position: absolute;
     top: 1.5rem;
@@ -250,13 +351,13 @@ header .icons #menu-bars{
     line-height: 5rem;
     font-size: 2rem;
     color:var(--black) ;
-} */
+} 
 
-/* .dishes .box-container .box .fa-heart:hover,
+.dishes .box-container .box .fa-heart:hover,
 .dishes .box-container .box .fa-eye:hover{
     background: var(--green);
     color: #fff;
-} */
+}
 
 .dishes .box-container .box .fa-heart{
     right: -15rem;
@@ -280,15 +381,16 @@ header .icons #menu-bars{
     color: var(--black);
     font-size: 2.5rem;
 }
-.dishes .box-container .box .star{
+.dishes .box-container .box .stars{
     padding: 1rem 0;
 }
-.star{
-    width: 3rem;
+.dishes .box-container .box .stars i{
+    font-size: 1.5rem;
+    color: gold;
 }
 
 .dishes .box-container .box span{
-    color: var(--green);
+    color: crimson;
     font-weight: bolder;
     margin-right: 1rem;
     font-size: 2rem;
@@ -345,17 +447,17 @@ header .icons #menu-bars{
     padding: 1.2rem 1rem
 }
 .about .row .content .icons-container .icons i{
-    .icons-about{
-        width: 2.5rem;
-        height: 2rem;
-    }
-}
+   font-size: 2rem;
+
+} 
 
 .about .row .content .icons-container .icons span{
     font-size: 1.5rem ;
     color: var(--black);
 }
 
+
+/* css menu  */
 .menu .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
@@ -382,28 +484,29 @@ header .icons #menu-bars{
 }
 .menu .box-container .box .image .fa-heart{
     position: absolute;
-    top: 2.5rem;right: 2.5rem;
+    top: 2.5rem;
+    right: 2.5rem;
     height: 5rem;
     width: 5rem;
     line-height: 5rem;
     text-align: center;
     border-radius: 50%;
-}
-.menu .box-container .box .image .tim11{
-    width: 2.5rem;
-    height: 2.5rem;
+    font-size: 2rem;
+    background: #fff;
+    color: red;
 }
 
 .menu .box-container .box .content{
-    padding: 2rem;
-    padding-top: 0;
+    padding:2rem;
+    padding-top: 1.5rem; 
 }
 
 .menu .box-container .box .content .stars{
-    padding-bottom: 1rem;
+    padding-bottom: 1.5rem;
 }
 .menu .box-container .box .content .stars i{
     font-size: 1.5rem; 
+    color:gold;
 }
 
 .menu .box-container .box .content h3{
@@ -416,12 +519,77 @@ header .icons #menu-bars{
     padding: .5rem 0;
     line-height: 1.5;
 }
-.menu .box-container .box .content .pice{
-    color: var(--green);
-    margin-left: 1.5rem;
+.menu .box-container .box .content .price{
+    color: crimson;
+    margin-left: 2rem;
     font-size: 2.5rem;
+    font-weight: bolder; 
+}
+.menu .box-container .box .content .count{
+    margin-left: 2rem;
 }
 
+
+
+
+
+/* css combo */
+
+
+
+.combo .row{  
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.combo .row .image{
+    flex: 1 1 40rem;
+}
+.combo .row .image .combo1{
+    width: 100%;
+    height: 50rem;
+}
+
+.combo .row .content{
+    /* flex: 1 1 1rem; */
+    /* text-align: center; */
+    margin-left: 3rem;
+}
+
+.combo .row .content p{
+    color: var(--black);
+    font-size: 1.2rem;
+    padding: .5rem 0;
+    line-height: 2;
+    padding-left: 3.5rem;
+    font-weight: bold;
+}
+.combo .row .content span{
+    color: crimson;
+    font-weight: bolder;
+    margin-right: 1rem;
+    font-size: 2rem;
+}
+
+.combo .row .content .count{
+    background-color: #ccc;
+    font-size: 1,5rem;
+}
+
+.combo .row .chart-container {
+    width: 45rem;
+}
+
+  canvas {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+}
+
+
+/* css review */
 .review .slide{
     padding: 2rem;
     box-shadow: var(--box-shadow);
@@ -450,6 +618,10 @@ header .icons #menu-bars{
     color: var(--black);
     font-size: 2rem;
     padding-bottom: .5rem;
+}
+.review .slide .user i{
+    font-size: 1.2rem;
+    color: gold;
 }
 .review .slide .user p{
     font-size: 1.5rem;
@@ -603,7 +775,7 @@ header .icons #menu-bars{
 
 
 
-@media(max-width:991px){
+@media(max-width:1200px){
     html{
         font-size: 55%;
     }
@@ -616,7 +788,8 @@ header .icons #menu-bars{
     }
 }
 
-@media(max-width:768px){
+
+@media(max-width:900px){
     header .icons #menu-bars{
         display: inline-block;
     }
