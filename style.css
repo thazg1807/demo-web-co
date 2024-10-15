@@ -829,4 +829,7 @@ display: block;
     .order form .inputBox .input{
         width: 100%;
     }
+    #shopping-cart{
+        width: 30rem;
+    }
 }
